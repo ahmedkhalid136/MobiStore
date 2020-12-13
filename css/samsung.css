@@ -1,4 +1,47 @@
 footer {
-    background-color: grey;
+  background-color: beige;
+}
+
+.mobile{
+  height: 420px;
+  padding: 2%;
+}
+
+.mobile img{
+  height: 180px;
+  text-align: center;
+  padding: 0 0 5% 0;
+}
+
+.mobile h3{
+  color: blue;
+  font-weight: 700;
+}
+
+.carousel-txt{
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  color: white;
+}
+
+.carousel-txt h1{
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+@media (max-width:1200px){
+  .carousel-txt h1{
+    font-weight: 700;
+    font-size: 2rem;
   }
-  
+}
+
+@media (max-width:600px){
+  .header-track{
+    display: none;
+  }
+  .header-icons{
+    margin-left: auto;
+  }
+}
