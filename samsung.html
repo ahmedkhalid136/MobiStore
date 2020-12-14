@@ -13,127 +13,55 @@
 </head>
 
 <body>
-    <header style="background-color: beige; padding: 1% 0">
-        <div>
-            <div class="row container-fluid">
-                <div class="col-lg-4 col-md-4 col-sm-4 header-track" style="margin: auto"><span>Track Your Order</span>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4" style="text-align: center">
-                    <a style="text-decoration: none;" href="./index.html">
-                        <h1><span style="color: red">Mobi</span><span style="color: blue">Store</span></h1>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 header-icons" style="text-align: right; margin: auto"><i
-                        class="fas fa-shopping-cart fa-lg"></i>&nbsp&nbsp&nbsp&nbsp&nbsp<i
-                        class="fas fa-user-circle fa-lg"></i></div>
+    <!-- HEADER SECTION -->
+    <header>
+
+        <nav style="margin-top: -10px; border-bottom: 1px solid #8b0000; text-align: center;min-height: 20%; padding: 2%;"
+            class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand nav-logo" href="/"><span style="color: blue;font-size: 30px;">Mobi</span> <span
+                    style="color: red;font-size: 30px;">store</span></a>
+            <button style="margin-right: 29%;" class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ml-auto mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Phone
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="iphone.html">Iphone</a>
+                            <a class="dropdown-item" href="samsung.html">Samsung</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/franchise">FRANCHISE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/news">NEWS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/aboutus">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#contact-us">CONTACT US</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </div>
-        </div>
+        </nav>
     </header>
-
-    <section>
-        <div class="container" style="position: relative;">
-            <img src="https://images.samsung.com/is/image/samsung/assets/pk/p6_gro3/p6_initial_pfs/p6_initial_mobile/P6_PFS_1440X640_Canvas_5G_01.png?$ORIGIN_PNG$"
-                style="width: 100%;" alt="">
-            <div class="carousel-txt">
-                <h1>Galaxy Note 20|</h1>
-                <h1>20 Ultra</h1>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mobile Section -->
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mobile">
-                    <h3>Samsung Galaxy A01</h3>
-                    <img src="./images/Samsung-Galaxy-A01.jpg" alt="">
-                    <p>Samsung Galaxy A01 (4GB RAM)(64GB ROM) - red version</p>
-                    <p>Price: $200</p>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
-                <div class="col-lg-3 col-md-6 mobile">
-                    <h3>Samsung Galaxy 9</h3>
-                    <img src="./images/Samsung-Galaxy 9.jpeg" alt="">
-                    <p>Samsung Galaxy A01 (4GB RAM)(64GB ROM) -blue version</p>
-                    <p>Price: $400</p>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
-                <div class="col-lg-3 col-md-6 mobile">
-                    <h3>Samsung Note 10</h3>
-                    <img src="./images/Samsung-galaxy-note10.png" alt="">
-                    <p>Samsung Galaxy Note 10 (8GB RAM)(256GB ROM) -blue version</p>
-                    <p>Price: $1280</p>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
-                <div class="col-lg-3 col-md-6 mobile">
-                    <h3>Samsung Galaxy S10</h3>
-                    <img src="./images/Samsung-galaxy-S10.png" alt="">
-                    <p>Samsung Galaxy S10 (4GB RAM)(64GB ROM) -black version</p>
-                    <p>Price: $400</p>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
-                <div class="col-lg-3 col-md-6 mobile">
-                    <h3>Samsung Galaxy A01</h3>
-                    <img src="./images/Samsung-Galaxy-A01.jpg" alt="">
-                    <p>Samsung Galxy A01 (4GB RAM)(64GB ROM) -black version</p>
-                    <p>Price: $400</p>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
-                <div class="col-lg-3 col-md-6 mobile">
-                    <h3>Samsung S10 lite</h3>
-                    <img src="./images/Samsung-Galaxy-S10 lite.jpeg" alt="">
-                    <p>Samsung Galxy S10 lite (6GB RAM)(128GB ROM) -black version</p>
-                    <p>Price: $400</p>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
-                <div class="col-lg-3 col-md-6 mobile">
-                    <h3>Samsung Galaxy A01</h3>
-                    <img src="./images/Samsung-Galaxy-A01.jpg" alt="">
-                    <p>Samsung Galaxy A01 (4GB RAM)(64GB ROM) - red version</p>
-                    <p>Price: $200</p>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
-                <div class="col-lg-3 col-md-6 mobile">
-                    <h3>Samsung Galaxy A01</h3>
-                    <img src="./images/Samsung-Galaxy-A01.jpg" alt="">
-                    <p>Samsung Galaxy A01 (4GB RAM)(64GB ROM) - red version</p>
-                    <p>Price: $200</p>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
-                <div class="col-lg-3 col-md-6 mobile">
-                    <h3>Samsung Galaxy A01</h3>
-                    <img src="./images/Samsung-Galaxy-A01.jpg" alt="">
-                    <p>Samsung Galaxy A01 (4GB RAM)(64GB ROM) - red version</p>
-                    <p>Price: $200</p>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
-                <div class="col-lg-3 col-md-6 mobile">
-                    <h3>Samsung Galaxy A01</h3>
-                    <img src="./images/Samsung-Galaxy-A01.jpg" alt="">
-                    <p>Samsung Galaxy A01 (4GB RAM)(64GB ROM) - red version</p>
-                    <p>Price: $200</p>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
-                <div class="col-lg-3 col-md-6 mobile">
-                    <h3>Samsung Galaxy A01</h3>
-                    <img src="./images/Samsung-Galaxy-A01.jpg" alt="">
-                    <p>Samsung Galaxy A01 (4GB RAM)(64GB ROM) - red version</p>
-                    <p>Price: $200</p>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
-                <div class="col-lg-3 col-md-6 mobile">
-                    <h3>Samsung Galaxy A01</h3>
-                    <img src="./images/Samsung-Galaxy-A01.jpg" alt="">
-                    <p>Samsung Galaxy A01 (4GB RAM)(64GB ROM) - red version</p>
-                    <p>Price: $200</p>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <footer style="margin-top: 3%">
         <br />
         <div class="container">
@@ -162,6 +90,14 @@
         </div>
         <br />
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </body>
 
 </html>
