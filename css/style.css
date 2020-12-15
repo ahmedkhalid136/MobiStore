@@ -1,4 +1,15 @@
 
 footer {
-background-color: #343a40 ;
-}
+  background-color: #343a40 ;
+  }
+
+  .cat-samsung:hover{
+    color: white !important;
+    background-color: blue !important;
+  }
+  .cat-iphone:hover{
+    color:white !important;
+    background-color: black;
+  }
+  
+
