@@ -71,8 +71,8 @@
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
           <div class="card card-signin my-5">
             <div class="card-body">
-              <h5 class="card-title text-center">Sign In</h5>
-              <form class="form-signin" action="signup.php" id="form" method="post" name="form">
+              <h5 class="card-title text-center">Sign up</h5>
+              <!-- <form class="form-signin" action=""  method="post" name="form">
                 <div class="form-label-group">
                   <input type="name" name="username" id="inputname" class="form-control" placeholder="User name" required autofocus>
                   <label for="inputname">user name</label>
@@ -100,7 +100,35 @@
                 <button class="btn btn-lg btn-primary btn-block text-uppercase"  name = "submit"  type="submit">Sign up</button>
                 <hr class="my-4">
                 
-              </form>
+              </form> -->
+              <form action=""  method="post">
+         <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" placeholder="enter the name" id="name" name="username">
+         </div>
+
+         <div class="form-group">
+          <label for="Roll">email</label>
+          <input type="email" class="form-control" placeholder="enter the email" id="Roll" name="Email">
+         </div> 
+
+         <div class="form-group">
+          <label for="Roll">password</label>
+          <input type="message" class="form-control" placeholder="enter the message" id="Roll" name="Password">
+         </div>
+
+         <!-- <div class="form-group">
+          <label for="Roll">Roll</label>
+          <input type="text" class="form-control" placeholder="enter the Roll" id="Roll" name="Roll">
+         </div> -->
+
+         <!-- <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" placeholder="enter the address" id="address" name="address">
+         </div> -->
+         <button type="submit" class="btn btn-primary" id="submit" name="submit">submit</button>
+        
+         </form>
             </div>
           </div>
         </div>
@@ -157,33 +185,34 @@
 <?php
 $servername = "localhost";
  $username = "username";
+ $Email ="Email";
  $password = "password";
  $DB= "webroject";
-$con =new mysqli($servername,'root','',$DB);
+$con =new mysqli('127.0.0.1','root','',$DB);
 if (!$con) {
      die("Connection failed: " . $con->connect_error);
-  
 }
 
 
-if(isset($_POST['submit'])){  
-  if(($_REQUEST['username'] == "")||($_REQUEST['Email'] == "")||($_REQUEST['password']== "")){
+if(isset($_REQUEST['submit'])){  
+  if(($_REQUEST['username'] == "")||($_REQUEST['Email'] == "")||($_REQUEST['Password']== "")){
           echo "Fill all the fields";
          }
          else{
           $name= $_POST['username'];
           $Email = $_POST['Email'];
           $password =$POST['Password'];
-          $sql ="INSERT INTO `usersignup`( `Name`, `Email`, `Password`) VALUES ('$name',$Email',$password)";
+          $sql ="INSERT INTO usersignup( Name,Email,Password) VALUES ('$name',$Email',$password)";
           //inserting into database
           if ($conn->query($sql) === TRUE) {
                         echo "Data entered successfully";
                      } else {
                        echo "Error Entering database: " . $conn->error;
                       }
+                      
 }}
 
-header("Location: http://localhost/Project 1/index.php");
+
 
 
 
