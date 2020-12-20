@@ -72,7 +72,7 @@
           <div class="card card-signin my-5">
             <div class="card-body">
               <h5 class="card-title text-center">Sign In</h5>
-              <form class="form-signin" action="" method="POST">
+              <form class="form-signin" action="signup.php" id="form" method="post" name="form">
                 <div class="form-label-group">
                   <input type="name" name="username" id="inputname" class="form-control" placeholder="User name" required autofocus>
                   <label for="inputname">user name</label>
@@ -97,7 +97,7 @@
                   <input type="checkbox" class="custom-control-input" id="customCheck1">
                   <label class="custom-control-label" for="customCheck1">Remember password</label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign up</button>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase"  name = "submit"  type="submit">Sign up</button>
                 <hr class="my-4">
                 
               </form>
@@ -159,25 +159,30 @@ $servername = "localhost";
  $username = "username";
  $password = "password";
  $DB= "webroject";
-$con =mysqli_connect('127.0.0.1','root','',$DB);
-if(!$con){
-  echo 'Not Connected To Server';
+$con =new mysqli($servername,'root','',$DB);
+if (!$con) {
+     die("Connection failed: " . $con->connect_error);
+  
 }
-if(!mysqli_select_db($con,$DB)){
-  echo 'Database not found'
-}
-$name= $_POST['username'];
-$Email = $_POST['Email'];
-$password =$POST['Password'];
 
-$sql ="INSERT INTO `usersignup`( `Name`, `Email`, `Password`) VALUES ('$name',$Email',$password)";
 
-if(!mysqli_query($con,$sql)){
-  echo'Not Inserted';
-}
-else{
-  echo'Inserted'
-}
+if(isset($_POST['submit'])){  
+  if(($_REQUEST['username'] == "")||($_REQUEST['Email'] == "")||($_REQUEST['password']== "")){
+          echo "Fill all the fields";
+         }
+         else{
+          $name= $_POST['username'];
+          $Email = $_POST['Email'];
+          $password =$POST['Password'];
+          $sql ="INSERT INTO `usersignup`( `Name`, `Email`, `Password`) VALUES ('$name',$Email',$password)";
+          //inserting into database
+          if ($conn->query($sql) === TRUE) {
+                        echo "Data entered successfully";
+                     } else {
+                       echo "Error Entering database: " . $conn->error;
+                      }
+}}
+
 header("Location: http://localhost/Project 1/index.php");
 
 
