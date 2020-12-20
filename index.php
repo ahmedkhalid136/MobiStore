@@ -90,13 +90,13 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6" style="text-align: center">
-          <a style="text-decoration: none" href="./iphone.html">
+          <a style="text-decoration: none" href="./iphone.php">
             <h1 class="cat-iphone" style="border: 2px solid black; color: black">iPhone</h1>
           </a>
           <img src="./images/iphone-logo-541.png" style="width: 100%; border: 2px solid black; height: 400px" alt="" />
         </div>
         <div class="col-lg-6" style="text-align: center">
-          <a style="text-decoration: none" href="./samsung.html">
+          <a style="text-decoration: none" href="./samsung.php">
             <h1 class="cat-samsung" style="border: 2px solid blue; color: blue">SAMSUNG</h1>
           </a>
           <img src="./images/samsung-logo-png-1285.png" style="width: 100%; border: 2px solid blue; height: 400px"

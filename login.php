@@ -1,3 +1,44 @@
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$DB= "webroject";
+// Create connection;
+$conn = new mysqli("localhost","root","",$DB);
+
+
+// Check connection 
+if (!$conn) {
+  die("Connection failed: " . $conn->connect_error);
+}
+  
+if(isset($_POST['Login'])){
+  $email=$_POST['Email'];
+  $password=$_POST['Password'];
+
+  $query ="SELECT * FROM `usersignup` where Email='$email' ";
+  $query_run = $conn->query($query);
+     
+  while($row = mysqli_fetch_array($query_run))
+  {
+    
+
+   if($ROLL==$databaseroll)
+   {
+  header("Location: http://localhost/projects/search.php");  
+  exit;}
+   else
+   {
+  echo "The roll number you entered is incorrect";
+}
+  }
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -86,7 +127,7 @@
                   <input type="checkbox" class="custom-control-input" id="customCheck1">
                   <label class="custom-control-label" for="customCheck1">Remember password</label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" name="Login" type="submit">Login</button>
                 <hr class="my-4">
               
               </form>
