@@ -74,22 +74,22 @@
               <h5 class="card-title text-center">Sign In</h5>
               <form class="form-signin" action="signup.php" method="POST">
                 <div class="form-label-group">
-                  <input type="name" id="inputname" class="form-control" placeholder="User name" required autofocus>
+                  <input type="name" name="username" id="inputname" class="form-control" placeholder="User name" required autofocus>
                   <label for="inputname">user name</label>
                 </div>
 
                 <div class="form-label-group">
-                    <input type="name" id="inputemail" class="form-control" placeholder="email" required autofocus>
+                    <input type="name" name="Email" id="inputemail" class="form-control" placeholder="email" required autofocus>
                     <label for="inputemail">Type in your email</label>
                   </div>
 
                   <div class="form-label-group">
-                    <input type="name" id="inputpassword" class="form-control" placeholder="Password" required autofocus>
+                    <input type="name" name="password" id="inputpassword" class="form-control" placeholder="Password" required autofocus>
                     <label for="inputpassword">password</label>
                   </div>
   
                 <div class="form-label-group">
-                  <input type="password" id="inputconfirmPassword" class="form-control" placeholder="Password" required>
+                  <input type="password" name="password1" id="inputconfirmPassword" class="form-control" placeholder="Password" required>
                   <label for="inputconfirmPassword">Confirm Password</label>
                 </div>
   
@@ -155,7 +155,23 @@
 
 </html>
 <?php
-$_SERVER
+$servername = "localhost";
+ $username = "username";
+ $password = "password";
+ $DB= "webroject";
+$con =mysqli_connect('127.0.0.1','root','',$DB);
+if(!$con){
+  echo 'Not Connected To Server'
+}
+if(!mysqli_select_db($con,$DB)){
+  echo 'Database not found'
+}
+$name= $_POST['username'];
+$Email = $_POST['Email'];
+$password =$POST['Password']
+
+$sql ="INSERT INTO `usersignup`( `Name`, `Email`, `Password`) VALUES ('$name',$Email',$password)";
+
 
 
 
