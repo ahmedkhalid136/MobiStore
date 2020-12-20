@@ -72,7 +72,7 @@
           <div class="card card-signin my-5">
             <div class="card-body">
               <h5 class="card-title text-center">Sign In</h5>
-              <form class="form-signin" action="signup.php" method="POST">
+              <form class="form-signin" action="" method="POST">
                 <div class="form-label-group">
                   <input type="name" name="username" id="inputname" class="form-control" placeholder="User name" required autofocus>
                   <label for="inputname">user name</label>
@@ -161,16 +161,25 @@ $servername = "localhost";
  $DB= "webroject";
 $con =mysqli_connect('127.0.0.1','root','',$DB);
 if(!$con){
-  echo 'Not Connected To Server'
+  echo 'Not Connected To Server';
 }
 if(!mysqli_select_db($con,$DB)){
   echo 'Database not found'
 }
 $name= $_POST['username'];
 $Email = $_POST['Email'];
-$password =$POST['Password']
+$password =$POST['Password'];
 
 $sql ="INSERT INTO `usersignup`( `Name`, `Email`, `Password`) VALUES ('$name',$Email',$password)";
+
+if(!mysqli_query($con,$sql)){
+  echo'Not Inserted';
+}
+else{
+  echo'Inserted'
+}
+header("Location: http://localhost/Project 1/index.php");
+
 
 
 
