@@ -1,3 +1,33 @@
+<?php
+$servername = "localhost";
+ $username = "username";
+ $Email ="Email";
+ $password = "password";
+ $DB= "webroject";
+ $conn = new mysqli("localhost","root","",$DB);
+if (!$conn) {
+     die("Connection failed: " . $con->connect_error);
+}
+
+
+if(isset($_REQUEST['submit'])){  
+  if(($_REQUEST['username'] == "")||($_REQUEST['Email'] == "")||($_REQUEST['Password']== "")){
+          echo "Fill all the fields";
+         }
+         else{
+          $name= $_POST['username'];
+          $Email = $_POST['Email'];
+          $password =$POST['Password'];
+          $sql = "INSERT INTO `usersignup`(`Name`,`Email`,`Password`) VALUES ('$name',$Email','$password')";
+          //inserting into database
+          if ($conn->query($sql) === TRUE) {
+                        echo "Data entered successfully";
+                     } else {
+                       echo "Error Entering database: " . $conn->error;
+                      }
+                      
+}}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -182,41 +212,3 @@
 </body>
 
 </html>
-<?php
-$servername = "localhost";
- $username = "username";
- $Email ="Email";
- $password = "password";
- $DB= "webroject";
-$con =new mysqli('127.0.0.1','root','',$DB);
-if (!$con) {
-     die("Connection failed: " . $con->connect_error);
-}
-
-
-if(isset($_REQUEST['submit'])){  
-  if(($_REQUEST['username'] == "")||($_REQUEST['Email'] == "")||($_REQUEST['Password']== "")){
-          echo "Fill all the fields";
-         }
-         else{
-          $name= $_POST['username'];
-          $Email = $_POST['Email'];
-          $password =$POST['Password'];
-          $sql ="INSERT INTO usersignup( Name,Email,Password) VALUES ('$name',$Email',$password)";
-          //inserting into database
-          if ($conn->query($sql) === TRUE) {
-                        echo "Data entered successfully";
-                     } else {
-                       echo "Error Entering database: " . $conn->error;
-                      }
-                      
-}}
-
-
-
-
-
-
-
-
-?>
