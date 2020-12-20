@@ -149,15 +149,7 @@ if(isset($_REQUEST['submit'])){
           <input type="message" class="form-control" placeholder="enter the message" id="Roll" name="Password">
          </div>
 
-         <!-- <div class="form-group">
-          <label for="Roll">Roll</label>
-          <input type="text" class="form-control" placeholder="enter the Roll" id="Roll" name="Roll">
-         </div> -->
-
-         <!-- <div class="form-group">
-          <label for="address">Address</label>
-          <input type="text" class="form-control" placeholder="enter the address" id="address" name="address">
-         </div> -->
+        
          <button type="submit" class="btn btn-primary" id="submit" name="submit">submit</button>
         
          </form>
