@@ -2,18 +2,16 @@
     $servername='localhost';
     $username='root';
     $password='';
-    $dbname = "my_db";
+    $dbname = "webroject";
     $conn=mysqli_connect($servername,$username,$password,"$dbname");
       if(!$conn){
           die('Could not Connect MySql Server:' .mysql_error());
         }
-
-  
-if(isset($_POST['Login'])){
+   if(isset($_POST['Login'])){
   $Email=$_POST['Email'];
   $password=$_POST['Password'];
 
-  $query ="SELECT * FROM `usersignup` where Email='".$Email."'";
+  $query ="SELECT * FROM `usersignup` where Email='$Email'";
   $query_run = $conn->query($query);
   if($query_run){
   
@@ -26,10 +24,10 @@ if(isset($_POST['Login'])){
      exit;
   
   }
-    // else {
-    //   echo "Error Entering database: " . $conn->error;
-    //  }
+    
   
+}else{
+  echo "Error Entering database: " . $conn->error;
 } }
 ?>
 
