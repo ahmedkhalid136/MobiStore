@@ -119,7 +119,7 @@ if(isset($_REQUEST['submit'])){
 
          <div class="form-group">
           <label for="Roll">password</label>
-          <input type="message" class="form-control" placeholder="enter the message" id="Roll" name="Password">
+          <input type="text" class="form-control" placeholder="enter the message" id="Roll" name="Password">
          </div>
 
         

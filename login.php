@@ -3,11 +3,11 @@
     $username='root';
     $password='';
     $dbname = "webroject";
-    $conn=mysqli_connect($servername,$username,$password,"$dbname");
+    $conn=mysqli_connect($servername,$username,$password,$dbname);
   if(!$conn){
        die('Could not Connect MySql Server:' .mysql_error());
     }
-   if(isset($_POST['Login'])){
+   if(isset($_REQUEST['Login'])){
   $Email=$_POST['Email'];
   $password=$_POST['Password'];
 
@@ -18,7 +18,7 @@
   while($row = mysqli_fetch_array($query_run)){
 
     echo '<script type="text/javascript">';
-    echo 'alert("You are now a user of mobistore and you are logged in as '.$row['Email'].'")';  //not showing an alert box.
+    echo 'alert("You are now a user of mobistore and you are logged in as")';  //not showing an alert box.
     echo '</script>';
     header("Location: http://localhost/Project 1/index.php");
      exit;
@@ -27,6 +27,7 @@
 }else{
   echo "Error Entering database: " . $conn->error;
 } }
+
 ?>
 
 <!DOCTYPE html>
@@ -107,9 +108,9 @@
                   <input type="email" id="inputEmail" name="Email" class="form-control" placeholder="Email address" required autofocus>
                   <label for="inputEmail">Email address</label>
                 </div>
-  
+   
                 <div class="form-label-group">
-                  <input type="password" id="inputPassword" name="Password" class="form-control" placeholder="Password" required>
+                  <input type="text" id="inputPassword" name="Password" class="form-control" placeholder="Password" required>
                   <label for="inputPassword">Password</label>
                 </div>
   
