@@ -1,16 +1,13 @@
 <?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$DB= "webroject";
-// Create connection;
-$conn = new mysqli("localhost","root","",$DB);
+    $servername='localhost';
+    $username='root';
+    $password='';
+    $dbname = "my_db";
+    $conn=mysqli_connect($servername,$username,$password,"$dbname");
+      if(!$conn){
+          die('Could not Connect MySql Server:' .mysql_error());
+        }
 
-
-// Check connection 
-if (!$conn) {
-  die("Connection failed: " . $conn->connect_error);
-}
   
 if(isset($_POST['Login'])){
   $Email=$_POST['Email'];
