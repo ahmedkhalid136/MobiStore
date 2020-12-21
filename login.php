@@ -4,9 +4,9 @@
     $password='';
     $dbname = "webroject";
     $conn=mysqli_connect($servername,$username,$password,"$dbname");
-      if(!$conn){
-          die('Could not Connect MySql Server:' .mysql_error());
-        }
+  if(!$conn){
+       die('Could not Connect MySql Server:' .mysql_error());
+    }
    if(isset($_POST['Login'])){
   $Email=$_POST['Email'];
   $password=$_POST['Password'];
@@ -24,8 +24,6 @@
      exit;
   
   }
-    
-  
 }else{
   echo "Error Entering database: " . $conn->error;
 } }
