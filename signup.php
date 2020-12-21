@@ -24,6 +24,8 @@ if(isset($_REQUEST['submit'])){
             echo '<script type="text/javascript">';
             echo ' alert("You are now a user of mobistore")';  //not showing an alert box.
             echo '</script>';
+            header("Location: http://localhost/Project 1/index.php");
+            exit;
                      } else {
                        echo "Error Entering database: " . $conn->error;
                       }

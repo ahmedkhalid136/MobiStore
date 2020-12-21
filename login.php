@@ -16,17 +16,18 @@ if(isset($_POST['Login'])){
   $email=$_POST['Email'];
   $password=$_POST['Password'];
 
-  $query ="SELECT * FROM `usersignup` where Email='$email' and Password='$password' ";
+  $query ="SELECT * FROM `usersignup` where Email='$email'";
   $query_run = $conn->query($query);
      
   while($row = mysqli_fetch_array($query_run))
   {
     
 
-   if($email==$databaseroll)
+   if($row['Email']== $email)
    {
-  header("Location: http://localhost/Project 1/index.php");  
-  exit;}
+  header("Location: http://localhost/Project1/index.php");  
+  exit;
+}
    else
    {
   echo "The roll number you entered is incorrect";
