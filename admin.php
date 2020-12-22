@@ -37,8 +37,34 @@ if(isset($_REQUEST['submit']))
 }
 }
 ?>
-<?php
 
+<?php
+$servername = "localhost";
+$username = "username";
+$Email ="Email";
+$password = "password";
+$DB= "webroject";
+$conn = new mysqli("localhost","root","",$DB);
+if (!$conn) {
+    die("Connection failed: " . $con->connect_error);
+}
+if(isset($_REQUEST['submit']))
+{  
+  if(($_REQUEST['mobilename'] == "")||($_REQUEST['description'] == "")||($_REQUEST['RAM']== "")){
+          echo "Fill all the fields";
+         }
+         else{
+          $mobilename= $_GET['mobilename'];
+          $RAM = $_GET['RAM'];
+          $description =$_GET['description'];
+          $ROM=$_GET['ROM'];
+          $RAM=$_GET['RAM'];
+          $samsung= $_GET['samsung'];
+          $iphone=$_GET['iphone'];
+          $image=$_GET['image'];
+$sql="UPDATE `products` SET `Name`=$mobilename,`Description`=$description,`RAM`=$RAM,`ROM`=$ROM WHERE 1";
+         }
+        }
 
 
 ?>
