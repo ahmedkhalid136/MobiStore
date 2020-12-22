@@ -74,7 +74,7 @@ if(isset($_REQUEST['submit']))
                     </div>
                     <div class="col-lg-6">
                     <label for="samsung">Samsung</label>    <input type="radio" name="samsung" value="samsung">
-                    <label for="samsung">Iphone</label>    <input type="radio" name="iphone" value="iphone">
+                    <label for="samsung">Iphone</label>    <input type="radio" name="samsung" value="iphone">
                     </div>
                     <div class="col-lg-12">
                         <label for="image">Select Image</label>
