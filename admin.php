@@ -50,7 +50,7 @@ if (!$conn) {
 }
 if(isset($_REQUEST['update']))
 {  
-  if(($_REQUEST['mobilename'] == "")||($_REQUEST['description'] == "")||($_REQUEST['RAM']== "")){
+  if(($_REQUEST['updatemobile'] == "")||($_REQUEST['updateRAM'] == "")||($_REQUEST['description1']== "")){
           echo "Fill all the fields";
          }
          else{
