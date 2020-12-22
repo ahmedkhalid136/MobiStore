@@ -48,7 +48,7 @@ $conn = new mysqli("localhost","root","",$DB);
 if (!$conn) {
     die("Connection failed: " . $con->connect_error);
 }
-if(isset($_REQUEST['submit']))
+if(isset($_REQUEST['update']))
 {  
   if(($_REQUEST['mobilename'] == "")||($_REQUEST['description'] == "")||($_REQUEST['RAM']== "")){
           echo "Fill all the fields";
@@ -62,7 +62,14 @@ if(isset($_REQUEST['submit']))
           $samsung= $_GET['samsung'];
           $iphone=$_GET['iphone'];
           $image=$_GET['image'];
-$sql="UPDATE `products` SET `Name`=$mobilename,`Description`=$description,`RAM`=$RAM,`ROM`=$ROM WHERE 1";
+          $sql="UPDATE `products` SET `Name`=$mobilename,`Description`=$description,`RAM`=$RAM,`ROM`=$ROM WHERE 1";
+          if ($conn->query($sql) === TRUE) {
+           
+            header("Location: http://localhost/Project 1/index.php");
+            exit;
+                     } else {
+                       echo "Error Entering database: " . $conn->error;
+                     } 
          }
         }
 
@@ -133,7 +140,7 @@ $sql="UPDATE `products` SET `Name`=$mobilename,`Description`=$description,`RAM`=
         <br>
     </section>
     <br>
-    <section id="delete" style="border:2px solid black; background-color: beige;">
+    <section id="update" style="border:2px solid black; background-color: beige;">
         <h1 style="text-align: center; font-size: 2rem;">Update Mobile</h1>
         <form action="">
             <div class="container">
@@ -159,7 +166,7 @@ $sql="UPDATE `products` SET `Name`=$mobilename,`Description`=$description,`RAM`=
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-md btn-outline-dark" type="submit">Submit</button>
+                <button class="btn btn-md btn-outline-dark" name="update" type="submit">update</button>
             </div>
         </form>
         <br>
