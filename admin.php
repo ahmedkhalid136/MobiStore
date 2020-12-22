@@ -13,16 +13,19 @@ if (!$conn) {
 
 if(isset($_REQUEST['submit']))
 {  
-  if(($_REQUEST['username'] == "")||($_REQUEST['Email'] == "")||($_REQUEST['Password']== "")){
+  if(($_REQUEST['mobilename'] == "")||($_REQUEST['description'] == "")||($_REQUEST['RAM']== "")){
           echo "Fill all the fields";
          }
          else{
-          $mobilename= $_POST['mobilename'];
-          $RAM = $_POST['RAM'];
-          $description =$_POST['description'];
-          $ROM=$_POST['ROM'];
-          $RAM=$_POST['RAM'];
-          $sql = "INSERT INTO `products`(`ProductID`, `Name`, `Description`, `Brand`, `RAM`, `ROM`, `images`) VALUES ('$mobilename','$RAM','$description','$ROM')";
+          $mobilename= $_GET['mobilename'];
+          $RAM = $_GET['RAM'];
+          $description =$_GET['description'];
+          $ROM=$_GET['ROM'];
+          $RAM=$_GET['RAM'];
+          $samsung= $_GET['samsung'];
+          $iphone=$_GET['iphone'];
+          $image=$_GET['image'];
+          $sql = "INSERT INTO `products`( `Name`, `Description`, `Brand`, `RAM`, `ROM`, `images`) VALUES ('$mobilename','$description','$samsung','$RAM','$ROM','$image')";
           //inserting into database
           if ($conn->query($sql) === TRUE) {
            
@@ -70,20 +73,15 @@ if(isset($_REQUEST['submit']))
                         <label for="name">ROM: &nbsp</label><input type="text" name="ROM">
                     </div>
                     <div class="col-lg-6">
-                        <label for="mob-type">
-                            Mobile-Type: &nbsp&nbsp
-                        </label>
-                        <select name="mob-type" id="">
-                            <option name="samsung" value="samsung">Samsung</option>
-                            <option name="iphone"value="iphone">Iphone</option>
-                        </select>
+                    <label for="samsung">Samsung</label>    <input type="radio" name="samsung" value="samsung">
+                    <label for="samsung">Iphone</label>    <input type="radio" name="iphone" value="iphone">
                     </div>
                     <div class="col-lg-12">
                         <label for="image">Select Image</label>
                         <input name="image" type="file">
                     </div>
                 </div>
-                <button class="btn btn-md btn-outline-dark" type="submit">Submit</button>
+                <button class="btn btn-md btn-outline-dark" name="submit" type="submit">Submit</button>
             </div>
         </form>
         <br>
