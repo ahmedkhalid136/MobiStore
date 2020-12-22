@@ -54,14 +54,13 @@ if(isset($_REQUEST['update']))
           echo "Fill all the fields";
          }
          else{
-          $mobilename= $_GET['mobilename'];
-          $RAM = $_GET['RAM'];
-          $description =$_GET['description'];
-          $ROM=$_GET['ROM'];
-          $RAM=$_GET['RAM'];
-          $samsung= $_GET['samsung'];
-          $iphone=$_GET['iphone'];
-          $image=$_GET['image'];
+          $mobilename= $_GET['updatemobile'];
+          $RAM = $_GET['updateRAM'];
+          $description =$_GET['description1'];
+          $ROM=$_GET['updateROM'];
+          
+        
+      
           $sql="UPDATE `products` SET `Name`=$mobilename,`Description`=$description,`RAM`=$RAM,`ROM`=$ROM WHERE 1";
           if ($conn->query($sql) === TRUE) {
            
@@ -151,17 +150,17 @@ if(isset($_REQUEST['update']))
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="name">Mobile Name: &nbsp</label><input type="text" name="name">
+                                <label for="name">Mobile Name: &nbsp</label><input type="text" name="updatemobile">
                             </div>
                             <div class="col-lg-6">
-                                <label for="name">RAM: &nbsp</label><input type="text" name="name">
+                                <label for="name">RAM: &nbsp</label><input type="text" name="updateRAM">
                             </div>
                             <div class="col-lg-6">
                                 <label for="name">Description: &nbsp&nbsp&nbsp&nbsp</label><input type="text"
-                                    name="name">
+                                    name="description1">
                             </div>
                             <div class="col-lg-6">
-                                <label for="name">ROM: &nbsp</label><input type="text" name="name">
+                                <label for="name">ROM: &nbsp</label><input type="text" name="updateROM">
                             </div>
                         </div>
                     </div>
