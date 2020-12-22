@@ -89,7 +89,7 @@
                             New Apple iPhone 12 Mini (128GB, Green)
                         </div>
                         <p>Price:$779.00</p>
-                  <a href="product.php"><button type="button" class="btn btn-warning">Buy</button> </a>
+                  <a href="admin.php"><button type="button" class="btn btn-warning">Buy</button> </a>
                     </div>
                 </div>
                 <div class="col-md-3 mobile">

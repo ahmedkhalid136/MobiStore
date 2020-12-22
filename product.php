@@ -83,8 +83,8 @@
                     <li>6GB RAM</li>
                     <li>64GB ROM</li>
                 </ul>
-                <button class="btn btn-outline-warning" style="display: block; margin-left: 25%;"><i
-                        class="fas fa-shopping-cart"></i>&nbsp Add To
+                <button class="btn btn-outline-warning"  href="admin.php"  style="display: block; margin-left: 25%;"><i
+                 class="fas fa-shopping-cart"></i>&nbsp Add To
                     Cart</button>
             </div>
         </div>
