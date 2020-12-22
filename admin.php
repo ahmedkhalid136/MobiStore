@@ -17,10 +17,12 @@ if(isset($_REQUEST['submit']))
           echo "Fill all the fields";
          }
          else{
-          $name= $_POST['username'];
-          $Email = $_POST['Email'];
-          $password =$_POST['Password'];
-          $sql = "INSERT INTO `products`(`ProductID`, `Name`, `Description`, `Brand`, `RAM`, `ROM`, `images`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7])";
+          $mobilename= $_POST['mobilename'];
+          $RAM = $_POST['RAM'];
+          $description =$_POST['description'];
+          $ROM=$_POST['ROM'];
+          $RAM=$_POST['RAM'];
+          $sql = "INSERT INTO `products`(`ProductID`, `Name`, `Description`, `Brand`, `RAM`, `ROM`, `images`) VALUES ('$mobilename','$RAM','$description','$ROM')";
           //inserting into database
           if ($conn->query($sql) === TRUE) {
            
@@ -28,8 +30,7 @@ if(isset($_REQUEST['submit']))
             exit;
                      } else {
                        echo "Error Entering database: " . $conn->error;
-                      }
-                   
+                     }       
 }
 }
 ?>
