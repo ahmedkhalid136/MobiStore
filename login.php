@@ -1,5 +1,6 @@
 
 <?php
+session_start();
     $servername='localhost';
     $username='root';
     $password='';
@@ -9,13 +10,14 @@
        die('Could not Connect MySql Server:' .mysql_error());
     }
    if(isset($_REQUEST['Login'])){
-  $name=$_POST['Name'];
+  $Name=$_POST['Name'];
   $password=$_POST['Password'];
 
-  $query ="SELECT * FROM `usersignup` where Name='$name'";
-  $query_run = $conn->query($query);
+
   if($query_run){
-    
+    $name=mysqli_query($conn,"SELECT Name FROM usersignup WHERE Name ='$Name' && Password='$password'");
+    $sql=mysqli_fetch_array($name);
+    $_SESSION['name']=$sql['Name'];
   while($row = mysqli_fetch_array($query_run)){
     
      header("Location: http://localhost/Project 1/index.php");
@@ -105,7 +107,7 @@
               <h5 class="card-title text-center">Sign In</h5>
               <form class="form-signin" action="index.php"  method="post" >
                 <div class="form-label-group">
-                  <input type="email" id="inputEmail" name="Name" class="form-control" placeholder="Username" required >
+                  <input type="text" id="inputEmail" name="Name" class="form-control" placeholder="Username" required >
                   <label for="inputEmail">Username</label>
                 </div>
    

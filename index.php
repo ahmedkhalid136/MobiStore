@@ -1,23 +1,5 @@
 <?php
-$uname="admin";
-$pwd="admin"; 
-
-session_start();
-
-if(isset($_SESSION['Name'])){
-  echo "<h1>Welcome ".$_SESSION['Name']."</h1>";
-  echo "<a href='index.php'>Home</a> <br>";
-  }
-else{
-  if($_POST['Name']==$uname && $_POST['Password']==$pwd){
-    $_SESSION['Name']=$uname;
-    echo "<script>location.href='index.php'</script>"
-  }
-  else{
-    echo "<script>alert('username or password is incorrect!')</script>"
-    echo "<script>location.href='login.php'</script>"
-  }
-}
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +19,7 @@ else{
 
 <body>
   <header>
-
+ 
     <nav style="margin-top: -10px; border-bottom: 1px solid #8b0000; text-align: center;min-height: 20%; padding: 2%;"
       class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand nav-logo" href="index.php"><span style="color: blue;font-size: 30px;">Mobi</span> <span
@@ -50,8 +32,9 @@ else{
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav ml-auto mt-lg-0">
+       
           <li class="nav-item">
-            <a class="nav-link" style="font-size: 20px;" href="index.php">Home</a>
+            <a class="nav-link" style="font-size: 20px;" href="index.php"> <p style="color:white">Welcome</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" style="font-size: 20px;" href="#" id="navbarDropdownMenuLink"
