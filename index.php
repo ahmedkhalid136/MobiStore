@@ -4,16 +4,20 @@ $pwd="admin";
 
 session_start();
 
-if(isset($_SESSION['Email'])){
-  echo "<h1>Welcome ".$_SESSION['Email']."</h1>";
-  echo "<a href='index.php'"
+if(isset($_SESSION['Name'])){
+  echo "<h1>Welcome ".$_SESSION['Name']."</h1>";
+  echo "<a href='index.php'>Home</a> <br>";
+  }
+else{
+  if($_POST['Name']==$uname && $_POST['Password']==$pwd){
+    $_SESSION['Name']=$uname;
+    echo "<script>location.href='index.php'</script>"
+  }
+  else{
+    echo "<script>alert('username or password is incorrect!')</script>"
+    echo "<script>location.href='login.php'</script>"
+  }
 }
-
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

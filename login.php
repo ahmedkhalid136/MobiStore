@@ -103,9 +103,9 @@
           <div class="card card-signin my-5">
             <div class="card-body">
               <h5 class="card-title text-center">Sign In</h5>
-              <form class="form-signin" action=""  method="post" >
+              <form class="form-signin" action="index.php"  method="post" >
                 <div class="form-label-group">
-                  <input type="email" id="inputEmail" name="Name" class="form-control" placeholder="Email address" required >
+                  <input type="email" id="inputEmail" name="Name" class="form-control" placeholder="Username" required >
                   <label for="inputEmail">Username</label>
                 </div>
    
