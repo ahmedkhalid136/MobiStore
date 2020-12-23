@@ -34,7 +34,7 @@ if(isset($_REQUEST['submit']))
                      } else {
                        echo "Error Entering database: " . $conn->error;
                      }       
-}
+   }
 }
 ?>
 
@@ -59,8 +59,8 @@ if(isset($_REQUEST['update']))
           $description =$_GET['description1'];
           $ROM=$_GET['updateROM'];
           $productid=$_GET['productID'];
-      
-          $sql=$sql = "UPDATE products SET `Name`='$mobilename',`Description`='$description', `RAM`='$RAM',`ROM`='$ROM' WHERE ProductID='$productid'";
+          $brand=$_GET['brand'];      
+          $sql=$sql = "UPDATE products SET `Name`='$mobilename',`Description`='$description', `RAM`='$RAM',`ROM`='$ROM',`Brand`=$brand WHERE ProductID='$productid'";
           if ($conn->query($sql) === TRUE) {
            
             header("Location: http://localhost/Project 1/index.php");
@@ -160,6 +160,9 @@ if(isset($_REQUEST['update']))
                             </div>
                             <div class="col-lg-6">
                                 <label for="name">ROM: &nbsp</label><input type="text" name="updateROM">
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="name">Band: &nbsp</label><input type="text" name="brand">
                             </div>
                         </div>
                     </div>
