@@ -1,3 +1,4 @@
+
 <?php
     $servername='localhost';
     $username='root';
@@ -8,10 +9,10 @@
        die('Could not Connect MySql Server:' .mysql_error());
     }
    if(isset($_REQUEST['Login'])){
-  $Email=$_POST['Email'];
+  $name=$_POST['Name'];
   $password=$_POST['Password'];
 
-  $query ="SELECT * FROM `usersignup` where Email='$Email'";
+  $query ="SELECT * FROM `usersignup` where Name='$name'";
   $query_run = $conn->query($query);
   if($query_run){
     
@@ -104,8 +105,8 @@
               <h5 class="card-title text-center">Sign In</h5>
               <form class="form-signin" action=""  method="post" >
                 <div class="form-label-group">
-                  <input type="email" id="inputEmail" name="Email" class="form-control" placeholder="Email address" required >
-                  <label for="inputEmail">Email address</label>
+                  <input type="email" id="inputEmail" name="Name" class="form-control" placeholder="Email address" required >
+                  <label for="inputEmail">Username</label>
                 </div>
    
                 <div class="form-label-group">

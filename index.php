@@ -1,3 +1,20 @@
+<?php
+$uname="admin";
+$pwd="admin"; 
+
+session_start();
+
+if(isset($_SESSION['Email'])){
+  echo "<h1>Welcome ".$_SESSION['Email']."</h1>";
+  echo "<a href='index.php'"
+}
+
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
