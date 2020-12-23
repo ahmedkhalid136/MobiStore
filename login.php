@@ -80,16 +80,16 @@
           <li class="nav-item">
             <a class="nav-link" style="font-size: 20px;" href="signup.php">signup</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: 20px;" href="adminlogin.php">Admin</a>
+          </li>
 
           <li class="nav-item">
             <a href="cart.php"> <i class="fa fa-2x fa-shopping-cart" style="margin-right:20px;margin-top: 10px ;"
                 aria-hidden="true"></i> </a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+       
       </div>
     </nav>
   </header>
@@ -104,7 +104,7 @@
               <h5 class="card-title text-center">Sign In</h5>
               <form class="form-signin" action=""  method="post" >
                 <div class="form-label-group">
-                  <input type="email" id="inputEmail" name="Email" class="form-control" placeholder="Email address" required autofocus>
+                  <input type="email" id="inputEmail" name="Email" class="form-control" placeholder="Email address" required >
                   <label for="inputEmail">Email address</label>
                 </div>
    
@@ -118,6 +118,7 @@
                   <label class="custom-control-label" for="customCheck1">Remember password</label>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block text-uppercase" name="Login" type="submit">Login</button>
+        
                 <hr class="my-4">
               
               </form>

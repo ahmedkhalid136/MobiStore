@@ -37,7 +37,7 @@ if(isset($_REQUEST['submit']))
    }
 }
 ?>
-
+<!-- UPDATE ka code -->
 <?php
 $servername = "localhost";
 $username = "username";
