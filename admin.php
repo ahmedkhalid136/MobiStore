@@ -22,10 +22,10 @@ if(isset($_REQUEST['submit']))
           $description =$_GET['description'];
           $ROM=$_GET['ROM'];
           $RAM=$_GET['RAM'];
-          $samsung= $_GET['samsung'];
+          $brand= $_GET['samsung'];
           $iphone=$_GET['iphone'];
           $image=$_GET['image'];
-          $sql = "INSERT INTO `products`( `Name`, `Description`, `Brand`, `RAM`, `ROM`, `images`) VALUES ('$mobilename','$description','$samsung','$RAM','$ROM','$image')";
+          $sql = "INSERT INTO `products`( `Name`, `Description`, `Brand`, `RAM`, `ROM`, `images`) VALUES ('$mobilename','$description','$brand','$RAM','$ROM','$image')";
           //inserting into database
           if ($conn->query($sql) === TRUE) {
            
@@ -60,7 +60,7 @@ if(isset($_REQUEST['update']))
           $ROM=$_GET['updateROM'];
           $productid=$_GET['productID'];
       
-          $sql="UPDATE `products` SET `Name`=$mobilename,`Description`=$description,`RAM`=$RAM,`ROM`=$ROM WHERE `productID`= '$productid'";
+          $sql=$sql = "UPDATE products SET `Name`='$mobilename',`Description`='$description', `RAM`='$RAM',`ROM`='$ROM' WHERE ProductID='$productid'";
           if ($conn->query($sql) === TRUE) {
            
             header("Location: http://localhost/Project 1/index.php");
