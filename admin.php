@@ -58,10 +58,9 @@ if(isset($_REQUEST['update']))
           $RAM = $_GET['updateRAM'];
           $description =$_GET['description1'];
           $ROM=$_GET['updateROM'];
-          
-        
+          $productid=$_GET['productID'];
       
-          $sql="UPDATE `products` SET `Name`=$mobilename,`Description`=$description,`RAM`=$RAM,`ROM`=$ROM WHERE `Name`= $mobilename";
+          $sql="UPDATE `products` SET `Name`=$mobilename,`Description`=$description,`RAM`=$RAM,`ROM`=$ROM WHERE `productID`= '$productid'";
           if ($conn->query($sql) === TRUE) {
            
             header("Location: http://localhost/Project 1/index.php");
@@ -70,7 +69,7 @@ if(isset($_REQUEST['update']))
                        echo "Error Entering database: " . $conn->error;
                      } 
          }
-        }
+}
 
 
 ?>
@@ -145,7 +144,7 @@ if(isset($_REQUEST['update']))
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <label for="name">Enter Product ID: &nbsp</label><input type="text" name="name">
+                        <label for="name">Enter Product ID: &nbsp</label><input type="text" name="productID">
                     </div>
                     <div class="container">
                         <div class="row">
