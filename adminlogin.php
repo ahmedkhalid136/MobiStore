@@ -11,7 +11,7 @@
   $Email=$_POST['Email'];
   $password=$_POST['Password'];
 
-  $query ="SELECT * FROM `usersignup` where Email='$Email'";
+  $query ="SELECT * FROM `adminlogin` where Email='$Email'";
   $query_run = $conn->query($query);
   if($query_run){
     
@@ -61,35 +61,11 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav ml-auto mt-lg-0">
           <li class="nav-item">
-            <a class="nav-link" style="font-size: 20px;" href="index.php">Home</a>
+            <a class="nav-link" style="font-size: 20px;" href="">welcome to the admin login page</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" style="font-size: 20px;" href="#" id="navbarDropdownMenuLink"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Phone
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="iphone.php">Iphone</a>
-              <a class="dropdown-item" href="samsung.php">Samsung</a>
+         
 
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: 20px;" href="login.php">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: 20px;" href="signup.php">signup</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="cart.php"> <i class="fa fa-2x fa-shopping-cart" style="margin-right:20px;margin-top: 10px ;"
-                aria-hidden="true"></i> </a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+         
       </div>
     </nav>
   </header>
@@ -117,7 +93,7 @@
                   <input type="checkbox" class="custom-control-input" id="customCheck1">
                   <label class="custom-control-label" for="customCheck1">Remember password</label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block text-uppercase" name="Login" type="submit">Login</button>
+             <a href="admin.php">  <button class="btn btn-lg btn-primary btn-block text-uppercase" name="Login" type="submit">Login</button> </a> 
                 <hr class="my-4">
               
               </form>
