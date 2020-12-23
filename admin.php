@@ -61,7 +61,7 @@ if(isset($_REQUEST['update']))
           
         
       
-          $sql="UPDATE `products` SET `Name`=$mobilename,`Description`=$description,`RAM`=$RAM,`ROM`=$ROM WHERE 1";
+          $sql="UPDATE `products` SET `Name`=$mobilename,`Description`=$description,`RAM`=$RAM,`ROM`=$ROM WHERE `Name`= $mobilename";
           if ($conn->query($sql) === TRUE) {
            
             header("Location: http://localhost/Project 1/index.php");
