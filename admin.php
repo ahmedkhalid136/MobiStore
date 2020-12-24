@@ -1,7 +1,5 @@
 <?php
-
 $msg="";
-
 $servername = "localhost";
  $username = "username";
  $Email ="Email";
@@ -25,7 +23,6 @@ if(isset($_REQUEST['submit']))
           $ROM=$_POST['ROM'];
           $RAM=$_POST['RAM'];
           $brand= $_POST['samsung'];
-          
           $image=$_FILES['image']['name'];
           $destination="images/".basename($_FILES['image']['name']);  
           $sql = "INSERT INTO `products`( `Name`, `Description`, `Brand`, `RAM`, `ROM`, `images`) VALUES ('$mobilename','$description','$brand','$RAM','$ROM','$image')";

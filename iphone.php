@@ -1,9 +1,8 @@
 <?php
-          $conn = new mysqli("localhost","root","","webroject");
-          $sql = "SELECT * FROM products";
+    $conn = new mysqli("localhost","root","","webroject");
+          $sql = "SELECT * FROM products ";
          $result = mysqli_query($conn,$sql);
-                        
-                        ?>
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,23 +84,37 @@
     <section>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3 mobile">
-                    <div class="iphone" style="height:150px;">
-                        <h1>Iphone12</h1>     
-                    <?php 
-                    while($row=mysqli_fetch_array($result)){
-                    
-                    echo "<img src='images/".$row['images']."' style='height:150px;'a>";
-                  
-                
+            <?php 
+            while($row=mysqli_fetch_array($result)){ 
+              echo  "<div class='col-md-3 mobile'>";
+               echo    " <div class='iphone'style='height:150px;'>";
+                 echo      " <h1>Iphone12</h1>"; 
+                           
+                    echo "<img src='images/".$row['images']."' style='height:150px;'a>";                
                      echo  " <div class='description'>";
                      echo     " New Apple iPhone 12 Mini (128GB, Green);";
                      echo  " </div>";
                       echo " <p>Price:$779.00</p>";
-                    }?> 
-                  <a href="admin.php"><button type="button" class="btn btn-warning">Buy</button> </a>
-                    </div>
-                </div>
+                      
+                  
+               echo  " <a href='admin.php'><button type='button' class='btn btn-warning'>Buy</button> </a>";
+                 echo  "</div>";
+              echo"</div>";
+              
+              echo " <div class='col-md-3 mobile'>";
+               echo   "  <div class='iphone'>";
+                  echo   "   <h1>Iphone12</h1>";
+
+                        echo "<img src='images/".$row['images']."' style='height:150px;'a>";  
+                    
+                  echo   "   <div class='description'>";
+                      echo    "    New Apple iPhone 12 Mini (128GB, Green)";
+                      echo    "   </div>";
+                      echo    "  <p>Price:$779.00</p>";
+                      echo    "   <button type='button' class='btn btn-warning'>Buy</button>";
+                      echo    "  </div>";
+                      echo    " </div>";
+            }?> 
                 <div class="col-md-3 mobile">
                     <div class="iphone">
                         <h1>Iphone12</h1>
@@ -141,19 +154,7 @@
                         <button type="button" class="btn btn-warning">Buy</button>
                     </div>
                 </div>
-                <div class="col-md-3 mobile">
-                    <div class="iphone">
-                        <h1>Iphone12</h1>
-
-                        <img src="./images/iphon12.jfif" style="height:150px;" alt="">
-
-                        <div class="description">
-                            New Apple iPhone 12 Mini (128GB, Green)
-                        </div>
-                        <p>Price:$779.00</p>
-                        <button type="button" class="btn btn-warning">Buy</button>
-                    </div>
-                </div>
+           
                 <div class="col-md-3 mobile">
                     <div class="iphone">
                         <h1>Iphone12</h1>
