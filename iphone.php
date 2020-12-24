@@ -88,11 +88,11 @@
             while($row=mysqli_fetch_array($result)){ 
               echo  "<div class='col-md-3 mobile'>";
                echo    " <div class='iphone'style='height:150px;'>";
-                 echo      " <h1>Iphone12</h1>"; 
+                 echo      " <h1>'".$row['Name']."'</h1>"; 
                            
                     echo "<img src='images/".$row['images']."' style='height:150px;'a>";                
                      echo  " <div class='description'>";
-                     echo     " New Apple iPhone 12 Mini (128GB, Green);";
+                     echo     " '".$row['Description']."' ";
                      echo  " </div>";
                       echo " <p>Price:$779.00</p>";
                       
