@@ -35,7 +35,7 @@ if(isset($_REQUEST['submit']))
                 $msg ="There was an error uploading the file";
     
             }
-            header("Location: http://localhost/Project 1/index.php");
+            header("Location: http://localhost/Web_Project/Zain_Project/Web-project/index.php");
             exit;
          }
           else {

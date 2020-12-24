@@ -1,6 +1,6 @@
 <?php
     $conn = new mysqli("localhost","root","","webroject");
-          $sql = "SELECT * FROM products ";
+          $sql = "SELECT * FROM products where Brand='iphone' ";
          $result = mysqli_query($conn,$sql);
  ?>
 <!DOCTYPE html>
@@ -88,7 +88,7 @@
             while($row=mysqli_fetch_array($result)){ 
               echo  "<div class='col-md-3 mobile'>";
                echo    " <div class='iphone'style='height:150px;'>";
-                 echo      " <h1>'".$row['Name']."'</h1>"; 
+                 echo      " <h1>".$row['Name']."</h1>"; 
                            
                     echo "<img src='images/".$row['images']."' style='height:150px;'a>";                
                      echo  " <div class='description'>";
@@ -101,19 +101,19 @@
                  echo  "</div>";
               echo"</div>";
               
-              echo " <div class='col-md-3 mobile'>";
-               echo   "  <div class='iphone'>";
-                  echo   "   <h1>Iphone12</h1>";
+              // echo " <div class='col-md-3 mobile'>";
+              //  echo   "  <div class='iphone'>";
+              //     echo   "   <h1>Iphone12</h1>";
 
-                        echo "<img src='images/".$row['images']."' style='height:150px;'a>";  
+              //           echo "<img src='images/".$row['images']."' style='height:150px;'a>";  
                     
-                  echo   "   <div class='description'>";
-                      echo    "    New Apple iPhone 12 Mini (128GB, Green)";
-                      echo    "   </div>";
-                      echo    "  <p>Price:$779.00</p>";
-                      echo    "   <button type='button' class='btn btn-warning'>Buy</button>";
-                      echo    "  </div>";
-                      echo    " </div>";
+              //     echo   "   <div class='description'>";
+              //         echo    "    New Apple iPhone 12 Mini (128GB, Green)";
+              //         echo    "   </div>";
+              //         echo    "  <p>Price:$779.00</p>";
+              //         echo    "   <button type='button' class='btn btn-warning'>Buy</button>";
+              //         echo    "  </div>";
+              //         echo    " </div>";
             }?> 
                 <div class="col-md-3 mobile">
                     <div class="iphone">

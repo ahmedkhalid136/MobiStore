@@ -17,7 +17,7 @@
     
   while($row = mysqli_fetch_array($query_run)){
     
-     header("Location: http://localhost/Project 1/admin.php");
+     header("Location: http://localhost/Web_Project/Zain_Project/Web-project/admin.php");
       exit;
   
   }
