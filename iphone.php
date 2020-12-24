@@ -1,7 +1,7 @@
 <?php
-                        $conn = new mysqli("localhost","root","","webroject");
-                        $sql = "SELECT * FROM products";
-                        $result = mysqli_query($conn,$sql);
+          $conn = new mysqli("localhost","root","","webroject");
+          $sql = "SELECT * FROM products";
+         $result = mysqli_query($conn,$sql);
                         
                         ?>
 <!DOCTYPE html>
@@ -94,10 +94,10 @@
                     echo "<img src='images/".$row['images']."' style='height:150px;'a>";
                   
                 
-                     echo  " <div class='description'>"
-                     echo     " New Apple iPhone 12 Mini (128GB, Green);"
-                     echo  " </div>"
-                      echo " <p>Price:$779.00</p>"
+                     echo  " <div class='description'>";
+                     echo     " New Apple iPhone 12 Mini (128GB, Green);";
+                     echo  " </div>";
+                      echo " <p>Price:$779.00</p>";
                     }?> 
                   <a href="admin.php"><button type="button" class="btn btn-warning">Buy</button> </a>
                     </div>
