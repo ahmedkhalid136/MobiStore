@@ -8,22 +8,26 @@ session_start();
   if(!$conn){
        die('Could not Connect MySql Server:' .mysql_error());
     }
-   if(isset($_REQUEST['Login'])){
+  if(isset($_REQUEST['Login'])){
   $Name=$_POST['Name'];
   $password=$_POST['Password'];
   if($query_run){
-    $name=mysqli_query($conn,"SELECT Name FROM usersignup WHERE Name ='$Name' && Password='$password'");
-    $sql=mysqli_fetch_array($name);
+    $name=mysqli_query($conn,"SELECT `Name`FROM usersignup WHERE `Name` ='$Name' && `Password`='$password'");
+    $sql=mysqli_query($name);
+    $num=mysqli_num_rows($sql);
     $_SESSION['name']=$sql['Name'];
-  while($row = mysqli_fetch_array($query_run)){
-     header("Location: http://localhost/Project 1/index.php");
+    if($num == 1){
+      // $sql=;
+      $name=mysqli_query($con,"SELECT Name FROM usersignup WHERE Email='$email' && Password='$pass'");
+      $sql=mysqli_fetch_array($name);
+      $_SESSION['name']=$sql['Name'];
+      header("Location: http://localhost/Project 1/index.php");
       exit;
-  }
-}else{
-  echo "Error Entering database: " . $conn->error;
-} 
 }
-
+else{
+      header("Location: http://localhost/Project 1/login.php");
+      exit;
+}
 ?>
 
 <!DOCTYPE html>
