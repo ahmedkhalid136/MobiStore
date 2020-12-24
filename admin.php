@@ -30,21 +30,21 @@ if(isset($_REQUEST['submit']))
           $destination="images/".basename($_FILES['image']['name']);  
           $sql = "INSERT INTO `products`( `Name`, `Description`, `Brand`, `RAM`, `ROM`, `images`) VALUES ('$mobilename','$description','$brand','$RAM','$ROM','$image')";
           //inserting into database
-        //   if ($conn->query($sql) === TRUE) {
-           
-        //     header("Location: http://localhost/Project 1/index.php");
-        //     exit;
-        //  }
-        //   else {
-        //        echo "<script>alert </script>";
-        //           }  
-        if(move_uploaded_file($_FILES['image']['tmp_name'],$destination)){
-            $msg= "Image uploaded successfully";
-        }
-        else{
-            $msg ="There was an error uploading the file";
-
-        }
+          if ($conn->query($sql) === TRUE) {
+            if(move_uploaded_file($_FILES['image']['tmp_name'],$destination)){
+                $msg= "Image uploaded successfully";
+            }
+            else{
+                $msg ="There was an error uploading the file";
+    
+            }
+            header("Location: http://localhost/Project 1/index.php");
+            exit;
+         }
+          else {
+               echo "<script>alert </script>";
+                  }  
+        
                            
    }
 }
