@@ -17,23 +17,26 @@ if(isset($_REQUEST['submit']))
           echo "Fill all the fields";
          }
          else{
-          $mobilename= $_GET['mobilename'];
-          $RAM = $_GET['RAM'];
-          $description =$_GET['description'];
-          $ROM=$_GET['ROM'];
-          $RAM=$_GET['RAM'];
-          $brand= $_GET['samsung'];
-          $iphone=$_GET['iphone'];
-          $image=$_GET['image'];
+          $mobilename= $_POST['mobilename'];
+          $RAM = $_POST['RAM'];
+          $description =$_POST['description'];
+          $ROM=$_POST['ROM'];
+          $RAM=$_POST['RAM'];
+          $brand= $_POST['samsung'];
+          $iphone=$_POST['iphone'];
+          $image=$_FILES['image']['name'];
+          $destination="images/".basename($_FILES['image']['name']);  
           $sql = "INSERT INTO `products`( `Name`, `Description`, `Brand`, `RAM`, `ROM`, `images`) VALUES ('$mobilename','$description','$brand','$RAM','$ROM','$image')";
           //inserting into database
           if ($conn->query($sql) === TRUE) {
            
             header("Location: http://localhost/Project 1/index.php");
             exit;
-                     } else {
-                       echo "Error Entering database: " . $conn->error;
-                     }       
+         }
+          else {
+               echo "<script>alert </script>";
+                   }  
+                 
    }
 }
 ?>
@@ -62,17 +65,18 @@ if(isset($_REQUEST['update']))
           $brand=$_GET['brand'];      
           $sql=$sql = "UPDATE products SET `Name`='$mobilename',`Description`='$description', `RAM`='$RAM',`ROM`='$ROM',`Brand`=$brand WHERE ProductID='$productid'";
           if ($conn->query($sql) === TRUE) {
-           
             header("Location: http://localhost/Project 1/index.php");
             exit;
                      } else {
                        echo "Error Entering database: " . $conn->error;
                      } 
+
+                     
          }
 }
 
 
-?>
+   ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,7 +97,7 @@ if(isset($_REQUEST['update']))
 
     <section id="Add" style="border:2px solid black; background-color: beige;">
         <h1 style="text-align: center; font-size: 2rem;">Add Mobile</h1>
-        <form action="">
+        <form action="" method="POST" enctype="multipart/form-data">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
