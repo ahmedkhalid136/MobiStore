@@ -1,5 +1,7 @@
 <?php
 
+$msg="";
+
 $servername = "localhost";
  $username = "username";
  $Email ="Email";
@@ -23,20 +25,27 @@ if(isset($_REQUEST['submit']))
           $ROM=$_POST['ROM'];
           $RAM=$_POST['RAM'];
           $brand= $_POST['samsung'];
-          $iphone=$_POST['iphone'];
+          
           $image=$_FILES['image']['name'];
           $destination="images/".basename($_FILES['image']['name']);  
           $sql = "INSERT INTO `products`( `Name`, `Description`, `Brand`, `RAM`, `ROM`, `images`) VALUES ('$mobilename','$description','$brand','$RAM','$ROM','$image')";
           //inserting into database
-          if ($conn->query($sql) === TRUE) {
+        //   if ($conn->query($sql) === TRUE) {
            
-            header("Location: http://localhost/Project 1/index.php");
-            exit;
-         }
-          else {
-               echo "<script>alert </script>";
-                   }  
-                 
+        //     header("Location: http://localhost/Project 1/index.php");
+        //     exit;
+        //  }
+        //   else {
+        //        echo "<script>alert </script>";
+        //           }  
+        if(move_uploaded_file($_FILES['image']['tmp_name'],$destination)){
+            $msg= "Image uploaded successfully";
+        }
+        else{
+            $msg ="There was an error uploading the file";
+
+        }
+                           
    }
 }
 ?>
