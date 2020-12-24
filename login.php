@@ -1,4 +1,3 @@
-
 <?php
 session_start();
     $servername='localhost';
@@ -12,19 +11,14 @@ session_start();
    if(isset($_REQUEST['Login'])){
   $Name=$_POST['Name'];
   $password=$_POST['Password'];
-
-
   if($query_run){
     $name=mysqli_query($conn,"SELECT Name FROM usersignup WHERE Name ='$Name' && Password='$password'");
     $sql=mysqli_fetch_array($name);
     $_SESSION['name']=$sql['Name'];
   while($row = mysqli_fetch_array($query_run)){
-    
      header("Location: http://localhost/Project 1/index.php");
       exit;
-  
   }
-  
 }else{
   echo "Error Entering database: " . $conn->error;
 } 
