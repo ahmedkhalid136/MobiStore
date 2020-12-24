@@ -1,33 +1,5 @@
 <?php
-session_start();
-    $servername='localhost';
-    $username='root';
-    $password='';
-    $dbname = "webroject";
-    $conn=mysqli_connect($servername,$username,$password,$dbname);
-  if(!$conn){
-       die('Could not Connect MySql Server:' .mysql_error());
-    }
-  if(isset($_REQUEST['Login'])){
-  $Name=$_POST['Name'];
-  $password=$_POST['Password'];
-  if($query_run){
-    $name=mysqli_query($conn,"SELECT `Name`FROM usersignup WHERE `Name` ='$Name' && `Password`='$password'");
-    $sql=mysqli_query($name);
-    $num=mysqli_num_rows($sql);
-    $_SESSION['name']=$sql['Name'];
-    if($num == 1){
-      // $sql=;
-      $name=mysqli_query($con,"SELECT Name FROM usersignup WHERE Email='$email' && Password='$pass'");
-      $sql=mysqli_fetch_array($name);
-      $_SESSION['name']=$sql['Name'];
-      header("Location: http://localhost/Project 1/index.php");
-      exit;
-}
-else{
-      header("Location: http://localhost/Project 1/login.php");
-      exit;
-}
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -103,14 +75,14 @@ else{
           <div class="card card-signin my-5">
             <div class="card-body">
               <h5 class="card-title text-center">Sign In</h5>
-              <form class="form-signin" action="index.php"  method="post" >
+              <form class="form-signin" action="php/login1.php"  method="post" >
                 <div class="form-label-group">
-                  <input type="text" id="inputEmail" name="Name" class="form-control" placeholder="Username" required >
-                  <label for="inputEmail">Username</label>
+                  <input type="email" id="inputEmail" name="Email" class="form-control" placeholder="Email address" required >
+                  <label for="inputEmail">Email address</label>
                 </div>
    
                 <div class="form-label-group">
-                  <input type="password" id="inputPassword" name="Password" class="form-control" placeholder="Password" required>
+                  <input type="text" id="inputPassword" name="Password" class="form-control" placeholder="Password" required>
                   <label for="inputPassword">Password</label>
                 </div>
   
