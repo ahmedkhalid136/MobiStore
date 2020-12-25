@@ -1,3 +1,11 @@
+<?php
+
+  $conn = new mysqli("localhost","root","","webroject");
+  $pid=$_GET['pid'];
+  $sql = "SELECT * FROM products where `pid`= '$pid' ";
+  $result = mysqli_query($conn,$sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +48,6 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="iphone.php">Iphone</a>
               <a class="dropdown-item" href="samsung.php">Samsung</a>
-
             </div>
           </li>
           <li class="nav-item">
@@ -63,32 +70,31 @@
     </nav>
   </header>
     
-    <section>
-        <div class="row">
-            <div class="col-lg-6 left-side">
-                <img src="./images/Samsung-Galaxy-A01.jpg" alt="">
-            </div>
-            <div class="col-lg-6 right-side">
-                <h1>Samsung Galaxy A01</h1>
-                <h6>Rs 43,999</h6>
-                <hr>
-                <ul>
-                    <li>64MP AI quad camera</li>
-                    <li>Qualcomm® SnapdragonTM 720G</li>
-                    <li>5020mAh Battery</li>
-                    <li>6.67" DotDisplay</li>
-                    <li>16MP In-Display Front Camera</li>
-                    <li>Height: 165.75mm Width: 76.68mm Thickness: 8.8mm Weight: 209g</li>
-                    <li>Supports 2+1 card slot, nano-SIM + nano-SIM + microSD (512GB expandable)</li>
-                    <li>6GB RAM</li>
-                    <li>64GB ROM</li>
-                </ul>
-                <button class="btn btn-outline-warning"  href="admin.php"  style="display: block; margin-left: 25%;"><i
-                 class="fas fa-shopping-cart"></i>&nbsp Add To
-                    Cart</button>
-            </div>
-        </div>
+  <section>
+    <?php
+     while($row=mysqli_fetch_array($result)){ 
+      echo ' <div class="row">';
+      echo     ' <div class="col-lg-6 left-side">';
+      echo        "<img src='images/".$row['images']."' >";
+      echo       '</div>';
+      echo    '  <div class="col-lg-6 right-side">' ;
+      echo       ' <br> <h1>'.$row['Name'].'</h1>';
+       echo         '<h6>Rs '.$row['Price'].'</h6>';
+       echo       '  <hr>';
+        echo       ' <ul>';
+          echo        '  <li>6GB RAM</li>';
+          echo         ' <li>64GB ROM</li>';
+          echo      '</ul>';
+          echo         '<p class="container"> Description: <br><br> '.$row['Description'].'</p>';
+           echo    ' <a href=cart.php?pid='.$row['pid'].'><button class="btn btn-outline-warning"  href="admin.php"  style="display: block; margin-left: 25%;"><i';
+           echo    '  class="fas fa-shopping-cart"></i>&nbsp Add To';
+           echo        ' Cart</button></a>';
+          echo'  </div>';
+       echo '</div>';
+     }
+      ?>
     </section>
+
 
     <footer style="margin-top: 3%">
     
@@ -101,10 +107,10 @@
             <p style="color: grey;"><i class="far fa-envelope"></i>&nbsp customercare@mobistore.com</p>
             <p style="color: grey;"><img src="./images/phone-alt-solid.svg" style="height: 17px" alt="" />&nbsp
               +92-337-9871230</p>
-            <p style="color: grey;"><i class="fab fa-facebook fa-lg"></i>&nbsp <i class="fab fa-instagram fa-lg"></i>
             </p>
           </div>
           <div class="col-lg-6" style="color: grey;">
+            <p style="color: grey;"><i class="fab fa-facebook fa-lg"></i>&nbsp <i class="fab fa-instagram fa-lg"></i>
             <h3 style="color: grey;">Our Company</h3>
             <br />
             <p style="color: grey;">Track Your Order</p>

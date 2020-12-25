@@ -92,29 +92,15 @@
                            
                     echo "<img src='images/".$row['images']."' style='height:150px;'a>";                
                      echo  " <div class='description'>";
-                     echo     " '".$row['Description']."' ";
+                     echo     "<br><p> ".$row['Description']."</p> ";
                      echo  " </div>";
-                      echo " <p>Price:$779.00</p>";
+                      echo " <p>Price: ".$row['Price']."</p>";
                       
                   
-               echo  " <a href='admin.php'><button type='button' class='btn btn-warning'>Buy</button> </a>";
+               echo  " <a href=product.php?pid=".$row['pid']."><button type='button' class='btn btn-warning'>Buy</button> </a>";
                  echo  "</div>";
               echo"</div>";
-              
-              // echo " <div class='col-md-3 mobile'>";
-              //  echo   "  <div class='iphone'>";
-              //     echo   "   <h1>Iphone12</h1>";
-
-              //           echo "<img src='images/".$row['images']."' style='height:150px;'a>";  
-                    
-              //     echo   "   <div class='description'>";
-              //         echo    "    New Apple iPhone 12 Mini (128GB, Green)";
-              //         echo    "   </div>";
-              //         echo    "  <p>Price:$779.00</p>";
-              //         echo    "   <button type='button' class='btn btn-warning'>Buy</button>";
-              //         echo    "  </div>";
-              //         echo    " </div>";
-            }?> 
+              }?> 
                 <div class="col-md-3 mobile">
                     <div class="iphone">
                         <h1>Iphone12</h1>
