@@ -1,13 +1,12 @@
-li{
-    line-height: 4;
-}
 
-.left-side img{
+
+/* .left-side img{
     width: 80%;
 }
 
 .right-side{
     background-color:#f4f4f2;
+    max-width: 100% !important;
 }
 
 .right-side ul{
@@ -18,10 +17,6 @@ li{
     font-weight: 700;
     font-size: 1.5rem;
     padding: 1% ;
-}
+} */
 
-
-footer {
-    background-color: #343a40 ;
-    }
   

@@ -1,10 +1,41 @@
 <?php
-
+  session_start();
   $conn = new mysqli("localhost","root","","webroject");
   $pid=$_GET['pid'];
+  // array_push($_SESSION['cart'], $pid);
   $sql = "SELECT * FROM products where `pid`= '$pid' ";
   $result = mysqli_query($conn,$sql);
+  $row = mysqli_fetch_array($result);
+
+  $name = $row['Name'];
+  $price = $row['Price'];
+  $image = $row['images'];
+
+  // $product = array($name,$price,$image);
+  // $_SESSION[$name] = $product;
+
+  // ORDERS SECTION
+  if(isset($_REQUEST['order'])){
+  $fname= $_POST["name"];
+  $address = $_POST["address"];
+  $p_method=$_POST["p-method"];
+  $status = "Processing";
+
+  $sql = "INSERT INTO orders(Name,Address,Status,ProductID) VALUES ('$fname','$address','$status','$pid')";
+  mysqli_query($conn,$sql);
+  
+  $mysql = "SELECT * FROM orders WHERE `Name`='$fname' AND `Address`='$address' AND `ProductID`='$pid'";
+  $result=mysqli_query($conn,$mysql);
+  $row = mysqli_fetch_array($result);
+  $_SESSION['oid']=$row['orderID'];
+  header("Location: http://localhost/Web_Project/Zain_Project/Web-project/sucess.php");
+  exit;
+  }
+
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +104,7 @@
 
 
 <!-- main body section-->
-
+<br><br>
 <section class="cart">
 <!-- <div class="container">
 <div class="row">
@@ -84,30 +115,56 @@
 </div> -->
 
 <?php
-
-  while($row=mysqli_fetch_array($result)){
     echo '<div class="container">';
     echo '<div class="row">';
     echo '<div class="col-lg-4">';
-    echo '<h2>product</h2>';
+    echo '<h2>product</h2><br>';
     echo '<img src=images/'.$row['images'].'  style="height: 100px;" alt="">';
 
     echo '</div>';
 
     echo '<div class="col-lg-4">';
-    echo '<h2>description</h2>';
+    echo '<h2>description</h2><br>';
     echo  $row['Description'];
     echo '</div>';
 
     echo '<div class="col-lg-4">';
-    echo '<h2>Price</h2>';
-    echo '<p>'.$row['Price'].'</p>';
+    echo '<h2>Price</h2><br>';
+    echo '<p>'.$row['Price'].'</p></div>';
 
-
-    echo '</div>';  }
+   
 ?>
+
+<!-- <div class="col-lg-3">
+  <h2>Checkout</h2>
+  <br>
+  <a href=""><button class="btn btn-warning btn-lg">Place Your Order</button></a>
+</div> -->
+
 </div>
 
+</div>
+
+<br>
+<div class="container">
+<form action="" method="POST">
+  <table>
+    <tr>
+      <td><label for="name">Full Name: &nbsp</label><input name="name" style="width:300px" type="text" required></td>
+    </tr>
+    <tr>
+      <td><label for="address">Address: &nbsp&nbsp&nbsp&nbsp</label><textarea style="resize:none" name="address" id="" cols="31" rows="2"></textarea></td>
+    </tr>
+    <tr>
+      <td>
+        <br><br>
+        <button name="order" class="btn btn-warning btn-lg" type="submit">Place Your Order</button> 
+      </td>
+    </tr>
+  </table>
+
+</form>
+</div>
 
 
 
@@ -117,7 +174,7 @@
 </section>
 <br>
 <br>
-<br>
+<br>  
 <br>
 <br>
 
@@ -138,7 +195,7 @@
       <div class="col-lg-6" style="color: grey;">
         <h3 style="color: grey;">Our Company</h3>
         <br />
-        <p style="color: grey;">Track Your Order</p>
+        <a href="status.php"><p style="color: grey;">Track Your Order</p></a>
         <p style="color: grey;">Terms & Condition</p>
       </div>
    
